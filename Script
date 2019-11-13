@@ -1,0 +1,5 @@
+#Navigate to folder where the list of IOCs resides
+#Insert Filename into script and the output filename you desire.
+#This script works for individual lines in a text file, if you have it set up in a CSV format it will not work.
+
+Get-Content .\$filename.txt | ForEach-Object {Add-Content $OutputFilename.txt ($_ + " " + "OR" + " ")}
